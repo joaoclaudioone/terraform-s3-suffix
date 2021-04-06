@@ -14,10 +14,10 @@ Inside infra directory has an example of the usage that creates three buckets wi
 ├── main.tf
 └── variables.tf
 ```
-### `main.tf`
+#### `main.tf`
 It's a module structure that will iterate through the `bucket_config` variable. To keep the creation flexible, it's used the `lookup` function to pass the default values case the value was not declared.
  
-### `variables.tf`
+#### `variables.tf`
 Has few variables with common values like tags and bucket_prefix. The variable `bucket_config` is a map with all the values that will be needed in the module. 
  
 ## Module directory
@@ -28,10 +28,10 @@ The module folder that has the creation of the resources.
 └── variables.tf
 ```
  
-### `main.tf`
+#### `main.tf`
 This file creates the bucket and bucket policy. In this bucket we can configure ACL, versioning, encryption e lifecycle rules. To support the creation of different parameters, maps are used as input variables and for iterations in case of multiple values. 
 
-### `variables.tf`
+#### `variables.tf`
 The above table shows the values that are expected for this module
 
 #### Inputs
